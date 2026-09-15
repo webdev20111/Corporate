@@ -1,0 +1,41 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Handle X-XSRF-Token Header
+    RewriteCond %{HTTP:x-xsrf-token} .
+    RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # API Routes - Send to Laravel index.php
+    RewriteCond %{REQUEST_URI} ^/api/
+    RewriteRule ^ index.php [L]
+
+    # Admin Routes - Send to Laravel index.php
+    RewriteCond %{REQUEST_URI} ^/admin/
+    RewriteRule ^ index.php [L]
+
+    # Auth Routes - Send to Laravel index.php
+    RewriteCond %{REQUEST_URI} ^/login
+    RewriteRule ^ index.php [L]
+
+    RewriteCond %{REQUEST_URI} ^/register
+    RewriteRule ^ index.php [L]
+
+    RewriteCond %{REQUEST_URI} ^/password/
+    RewriteRule ^ index.php [L]
+
+    RewriteCond %{REQUEST_URI} ^/dashboard
+    RewriteRule ^ index.php [L]
+
