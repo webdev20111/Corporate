@@ -1,0 +1,53 @@
+@import 'assets/css/style.css';
+
+body.page-loading app-header,
+body.page-loading app-footer {
+  display: none;
+}
+
+// Premium overrides for Feature Cards
+.feature-tile {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  border-left: 4px solid transparent;
+  padding: 0 !important; // override default padding to make image flush
+  overflow: hidden;
+}
+
+.feature-img-wrapper {
+  height: 170px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid rgba(15, 15, 15, 0.05);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+}
+
+.feature-tile-body {
+  padding: 1.5rem 1.6rem 1.6rem;
+}
+
+.feature-link:hover {
+  text-decoration: none;
+
+  .feature-tile {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 25px 50px rgba(15, 15, 15, 0.12) !important;
+    border-color: rgba(15, 15, 15, 0.12) !important;
+    border-left: 4px solid var(--accent) !important;
+
+    .feature-eyebrow {
+      color: var(--accent-strong) !important;
+    }
+
+    .feature-img-wrapper img {
+      transform: scale(1.04);
+    }
+  }
+}
+

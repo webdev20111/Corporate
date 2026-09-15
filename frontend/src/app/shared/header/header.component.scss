@@ -1,0 +1,101 @@
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1rem 0;
+}
+
+.navbar-dark, .navbar[data-bs-theme=dark] {
+    --bs-navbar-color: #fff !important;
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 58px;
+  object-fit: contain;
+  filter:
+    brightness(0)
+    invert(1)
+    contrast(1.15)
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.08))
+    drop-shadow(0 8px 18px rgba(0, 0, 0, 0.45));
+}
+
+.navbar .nav-link.active {
+  color: #fff;
+}
+
+:host .dropdown-mega.mega-locked .mega-menu,
+:host .dropdown-mega.mega-locked:hover .mega-menu {
+  display: none !important;
+}
+
+@media (max-width: 991.98px) {
+  .brand-logo {
+    height: 48px;
+  }
+
+  .navbar-toggler {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .tcs-hamburger {
+    width: 42px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .tcs-hamburger__divider {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .tcs-hamburger__bars {
+    width: 20px;
+    height: 16px;
+    position: relative;
+    display: block;
+  }
+
+  .tcs-hamburger__bars span {
+    position: absolute;
+    right: 0;
+    display: block;
+    width: 20px;
+    height: 3px;
+    background: #fff;
+  }
+
+  .tcs-hamburger__bars span:nth-child(1) {
+    top: 0;
+  }
+
+  .tcs-hamburger__bars span:nth-child(2) {
+    top: 6px;
+  }
+
+  .tcs-hamburger__bars span:nth-child(3) {
+    top: 12px;
+  }
+}

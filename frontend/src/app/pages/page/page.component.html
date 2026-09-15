@@ -1,0 +1,3 @@
+<div *ngIf="loading" class="container py-5">Loading...</div>
+<div *ngIf="!loading && content" [innerHTML]="content"></div>
+<div *ngIf="!loading && !content" class="container py-5">Page not found.</div>

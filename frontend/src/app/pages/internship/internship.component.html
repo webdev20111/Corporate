@@ -1,0 +1,152 @@
+<!-- Form Registration Section (White/Light Background) -->
+<section class="section section-light border-top" id="register">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+
+      <!-- Right Side Form -->
+      <div class="col-lg-12">
+        <div class="form-card-light">
+          <h3 class="mb-2 font-playfair text-dark">Apply for Internship in Chennai Today</h3>
+          <p class="text-muted-dark mb-4">Limited seats available for Full Stack, Python, Java, Data Science and AWS
+            internships at MPS Software Solution.</p>
+
+          <form class="row g-3" (ngSubmit)="submit()" [formGroup]="form">
+
+            <!-- Full Name -->
+            <div class="col-md-6">
+              <div class="custom-form-group-light">
+                <label class="form-label text-dark">Full Name</label>
+                <input type="text" class="form-control" formControlName="full_name" placeholder="Your name">
+                <div class="field-error" *ngIf="controlHasError('full_name')">
+                  {{ getFieldError('full_name') }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Email Address -->
+            <div class="col-md-6">
+              <div class="custom-form-group-light">
+                <label class="form-label text-dark">Email</label>
+                <input type="email" class="form-control" formControlName="email" placeholder="you@email.com">
+                <div class="field-error" *ngIf="controlHasError('email')">
+                  {{ getFieldError('email') }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="col-md-6">
+              <div class="custom-form-group-light">
+                <label class="form-label text-dark">Phone</label>
+                <input type="tel" class="form-control" formControlName="phone" placeholder="+91 90257 70238">
+                <div class="field-error" *ngIf="controlHasError('phone')">
+                  {{ getFieldError('phone') }}
+                </div>
+              </div>
+            </div>
+
+            <!-- College Name -->
+            <div class="col-md-6">
+              <div class="custom-form-group-light">
+                <label class="form-label text-dark">College / University Name</label>
+                <input type="text" class="form-control" formControlName="college" placeholder="College name">
+                <div class="field-error" *ngIf="controlHasError('college')">
+                  {{ getFieldError('college') }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Department -->
+            <div class="col-md-6">
+              <div class="custom-form-group-light">
+                <label class="form-label text-dark">Department / Branch</label>
+                <input type="text" class="form-control" formControlName="department"
+                  placeholder="e.g. Computer Science">
+                <div class="field-error" *ngIf="controlHasError('department')">
+                  {{ getFieldError('department') }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Year of Study -->
+            <div class="col-md-6">
+              <div class="custom-form-group-light">
+                <label class="form-label text-dark">Year of Study</label>
+                <select class="form-select" formControlName="year_of_study">
+                  <option value="" disabled>Select Year</option>
+                  <option *ngFor="let year of yearsOfStudy" [value]="year">{{ year }}</option>
+                </select>
+                <div class="field-error" *ngIf="controlHasError('year_of_study')">
+                  {{ getFieldError('year_of_study') }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Internship Duration -->
+            <div class="col-md-6">
+              <div class="custom-form-group-light">
+                <label class="form-label text-dark">Internship Duration</label>
+                <select class="form-select" formControlName="duration">
+                  <option value="" disabled>Select Duration</option>
+                  <option *ngFor="let dur of durations" [value]="dur">{{ dur }}</option>
+                </select>
+                <div class="field-error" *ngIf="controlHasError('duration')">
+                  {{ getFieldError('duration') }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Preferred Start Date -->
+            <div class="col-md-6">
+              <div class="custom-form-group-light">
+                <label class="form-label text-dark">Preferred Start Date</label>
+                <input type="date" class="form-control" formControlName="start_date">
+                <div class="field-error" *ngIf="controlHasError('start_date')">
+                  {{ getFieldError('start_date') }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Cover Message -->
+            <div class="col-12">
+              <div class="custom-form-group-light">
+                <label class="form-label text-dark">Cover Message / Objectives</label>
+                <textarea class="form-control" formControlName="message" rows="4"
+                  placeholder="Tell us about your internship goals..."></textarea>
+                <div class="field-error" *ngIf="controlHasError('message')">
+                  {{ getFieldError('message') }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Resume PDF Upload -->
+            <div class="col-12">
+              <div class="custom-form-group-light">
+                <label class="form-label text-dark">Upload Resume (PDF, Max 5MB)</label>
+                <input class="form-control" type="file" (change)="onFileChange($event)" accept="application/pdf">
+              </div>
+            </div>
+
+            <!-- Submit Button & Feedback Status -->
+            <div class="col-12 mt-4">
+              <button type="submit" class="btn btn-accent px-5 py-2.5 fw-semibold" [disabled]="submitting">
+                <span *ngIf="!submitting">Submit application</span>
+                <span *ngIf="submitting"><i class="fa-solid fa-spinner fa-spin me-2"></i>Submitting...</span>
+              </button>
+
+              <div class="mt-3" *ngIf="statusMessage">
+                <div class="alert-status" [class.alert-status-error]="statusType === 'error'"
+                  [class.alert-status-success]="statusType === 'success'">
+                  <i class="fa-solid me-2" [class.fa-triangle-exclamation]="statusType === 'error'"
+                    [class.fa-circle-check]="statusType === 'success'"></i>
+                  {{ statusMessage }}
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>n>

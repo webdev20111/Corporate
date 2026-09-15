@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-dark nav-blur sticky-top border-bottom border-white-15">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/" aria-label="MPS Software Solution home">
+      <img src="assets/logo-mps.png" alt="MPS Software Solution logo" class="brand-logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="tcs-hamburger" aria-hidden="true">
+        <span class="tcs-hamburger__divider"></span>
+        <span class="tcs-hamburger__bars">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <div class="nav-wrap w-100">
+        <ul class="navbar-nav nav-left align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+          <li class="nav-item dropdown dropdown-mega">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">What We Do</a>
+            <div class="dropdown-menu mega-menu p-4 shadow">
+              <div class="row g-4 align-items-start">
+                <div class="col-lg-3 mega-left">
+                  <span class="mega-title">Explore</span>
+                  <a class="mega-nav" routerLink="/industries">Industries</a>
+                  <a class="mega-nav" routerLink="/services">Services</a>
+                  <a class="mega-nav" routerLink="/products-platforms">Products &amp; Platforms</a>
+                  <a class="mega-nav" routerLink="/research-innovation">Research &amp; Innovation</a>
+                  <a class="mega-nav" routerLink="/alliances">Alliances</a>
+                </div>
+                <div class="col-lg-9">
+                  <div class="row g-3">
+                    <div class="col-md-4">
+                      <h6 class="mega-heading">Industries</h6>
+                      <a class="mega-item" href="/industries#healthcare">Healthcare</a>
+                      <a class="mega-item" href="/industries#education">Education</a>
+                      <a class="mega-item" href="/industries#retail">Retail</a>
+                      <a class="mega-item" href="/industries#manufacturing">Manufacturing</a>
+                      <a class="mega-item" href="/industries#public-services">Public Services</a>
+                    </div>
+                    <div class="col-md-4">
+                      <h6 class="mega-heading">Services</h6>
+                      <a class="mega-item" routerLink="/software-development">Software Development in Chennai</a>
+                      <a class="mega-item" routerLink="/hrms-solutions">HRMS Solutions</a>
+                      <a class="mega-item" routerLink="/hms-platforms">HMS Platforms</a>
+                      <a class="mega-item" routerLink="/web-development">Web Development</a>
+                      <a class="mega-item" routerLink="/support-maintenance">Support &amp; Maintenance</a>
+                    </div>
+                    <div class="col-md-4">
+                      <h6 class="mega-heading">Products</h6>
+                      <a class="mega-item" href="/products-platforms#hr-suite">MPS HR Suite</a>
+                      <a class="mega-item" href="/products-platforms#hospital-core">MPS Hospital Core</a>
+                      <a class="mega-item" href="/products-platforms#client-portals">MPS Client Portals</a>
+                      <a class="mega-item" href="/products-platforms#analytics-dashboards">Analytics Dashboards</a>
+                      <a class="mega-item" href="/products-platforms#workflow-automation">Workflow Automation</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" routerLink="/about" routerLinkActive="active">Who We Are</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/insights" routerLinkActive="active">Insights</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/careers" routerLinkActive="active">Careers</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/best-computer-science-internship" routerLinkActive="active">Internships</a></li>
+        </ul>
+        <ul class="navbar-nav nav-right align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link nav-icon" href="#" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/contact" routerLinkActive="active">Book ur appointment</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" routerLink="/contact">Start a Project</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

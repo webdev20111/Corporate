@@ -1,0 +1,31 @@
+.form-card {
+  margin-top: -80px;
+}
+
+.form-select option {
+  color: #000;
+  background: #fff;
+}
+
+.form-select option:disabled {
+  color: #6c757d;
+}
+
+.field-error {
+  margin-top: 0.35rem;
+  color: #ff8f8f;
+  font-size: 0.9rem;
+}
+
+.form-status {
+  display: inline-block;
+  margin-top: 0.75rem;
+}
+
+.form-status-error {
+  color: #ff8f8f;
+}
+
+.form-status-success {
+  color: rgba(255, 255, 255, 0.7);
+}

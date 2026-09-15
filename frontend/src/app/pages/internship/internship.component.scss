@@ -1,0 +1,384 @@
+// Act like a 10yr Exp Senior Designer and Developer
+// Implements absolute premium layout structures, hover states, fluid shadows, and font configurations.
+
+.font-playfair {
+  font-family: "Playfair Display", serif;
+}
+
+.internship-hero {
+  position: relative;
+  padding: 8rem 0 6rem;
+  background-image: linear-gradient(135deg, rgba(11, 11, 12, 0.92) 30%, rgba(11, 11, 12, 0.7) 100%), url('/assets/tech_hero_bg.png');
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(100, 255, 218, 0.04), transparent 70%);
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, #ffffff 40%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Alternating Sections
+.section-light {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 7rem 0;
+
+  .feature-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(11, 11, 12, 0.45);
+    margin-bottom: 0.8rem;
+    display: inline-block;
+  }
+
+  .text-muted-dark {
+    color: #000;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+}
+
+.section-dark {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 7rem 0;
+}
+
+// Premium Image Frame
+.image-wrapper-premium {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: -15px;
+    bottom: -15px;
+    border: 2px solid rgba(11, 11, 12, 0.08);
+    border-radius: 16px;
+    z-index: -1;
+    transition: all 0.3s ease;
+  }
+
+  &:hover::after {
+    top: 20px;
+    left: 20px;
+    right: -20px;
+    bottom: -20px;
+    border-color: var(--accent);
+  }
+}
+
+// 1. Metric Cards (Light background, White/Gray look)
+.metric-card-premium {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  padding: 2.25rem 1.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: transparent;
+    transition: background 0.3s ease;
+  }
+
+  .metric-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+    color: var(--black);
+
+    .metric-number {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1;
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--black);
+
+      i {
+        font-size: 1.8rem;
+        color: rgba(0, 0, 0, 0.7);
+      }
+    }
+
+    .metric-unit {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .metric-desc {
+    font-size: 0.92rem;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.12);
+
+    &::before {
+      background: var(--accent);
+    }
+
+    .metric-header .metric-number i {
+      color: var(--accent);
+    }
+  }
+}
+
+// 2. Process Cards (Dark background, high contrast, clean)
+.process-card-premium {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 100%;
+
+  .step-num {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.04);
+    transition: all 0.3s ease;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.6;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+      0 0 20px rgba(100, 255, 218, 0.08);
+
+    .step-num {
+      color: var(--accent);
+      transform: scale(1.1);
+    }
+
+    h5 {
+      color: var(--accent);
+    }
+  }
+}
+
+// 3. Why Choose Us Cards (Light background, White/Gray look)
+.why-card-premium {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 100%;
+  text-align: left;
+
+  .why-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.03);
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.75rem;
+    transition: all 0.3s ease;
+  }
+
+  h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    font-size: 0.92rem;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.5;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.12);
+
+    .why-icon {
+      background: var(--black);
+      color: var(--accent);
+      transform: scale(1.08) rotate(3deg);
+    }
+  }
+}
+
+// 4. Premium Registration Form Card
+.form-card-premium {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 3.5rem 3rem;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.custom-form-group {
+  margin-bottom: 0.5rem;
+
+  .form-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
+}
+
+.field-error {
+  font-size: 0.85rem;
+  color: #fb7185;
+  margin-top: 0.35rem;
+}
+
+.alert-status {
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+
+  &-success {
+    background: rgba(100, 255, 218, 0.1);
+    border: 1px solid rgba(100, 255, 218, 0.25);
+    color: var(--accent);
+  }
+
+  &-error {
+    background: rgba(251, 113, 133, 0.1);
+    border: 1px solid rgba(251, 113, 133, 0.25);
+    color: #fb7185;
+  }
+}
+
+// Light Form Container & Input Overrides
+.form-card-light {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+  }
+
+  .form-control,
+  .form-select {
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: var(--black);
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.45);
+    }
+
+    &:focus {
+      background: #ffffff;
+      border-color: var(--accent-strong);
+      box-shadow: 0 0 0 4px rgba(100, 255, 218, 0.15);
+      color: var(--black);
+      outline: none;
+    }
+  }
+
+  .form-label {
+    font-size: 0.9rem;
+    font-weight: 550;
+    margin-bottom: 0.4rem;
+  }
+}
+
+.form-graphic-wrapper {
+  text-align: center;
+  
+  img {
+    max-height: 380px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.03);
+  }
+
+  .graphic-caption {
+    h4 {
+      font-weight: 600;
+      font-size: 1.35rem;
+    }
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  }
+}

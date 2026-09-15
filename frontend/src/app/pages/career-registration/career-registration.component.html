@@ -1,0 +1,134 @@
+<div *ngIf="loading" class="container py-5">Loading...</div>
+<div *ngIf="!loading && content" [innerHTML]="content"></div>
+
+<section class="section section-dark">
+  <div class="container">
+    <div class="form-card">
+      <h4>Job opening application</h4>
+      <form class="row g-3" (ngSubmit)="submit()" [formGroup]="form">
+        <div class="col-md-6">
+          <label class="form-label">Full name</label>
+          <input type="text" class="form-control" formControlName="full_name" placeholder="Your name">
+          <div class="field-error" *ngIf="controlHasError('full_name') || fieldErrors['full_name']?.length">
+            {{ getFieldError('full_name') }}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Email address</label>
+          <input type="email" class="form-control" formControlName="email" placeholder="you@email.com">
+          <div class="field-error" *ngIf="controlHasError('email') || fieldErrors['email']?.length">
+            {{ getFieldError('email') }}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Phone number</label>
+          <input type="tel" class="form-control" formControlName="phone" placeholder="9025770238">
+          <div class="field-error" *ngIf="controlHasError('phone') || fieldErrors['phone']?.length">
+            {{ getFieldError('phone') }}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Current location</label>
+          <input type="text" class="form-control" formControlName="location" placeholder="Chennai, Tamil Nadu">
+          <div class="field-error" *ngIf="controlHasError('location') || fieldErrors['location']?.length">
+            {{ getFieldError('location') }}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Job opening</label>
+          <select class="form-select" formControlName="role">
+            <option value="" disabled>Choose a role</option>
+            <option>Full Stack Developer</option>
+            <option>Frontend Developer</option>
+            <option>Backend Developer</option>
+            <option>UI/UX Designer</option>
+            <option>QA Engineer</option>
+            <option>DevOps Engineer</option>
+            <option>Project Coordinator</option>
+            <option>Business Analyst</option>
+            <option>Other</option>
+          </select>
+          <div class="field-error" *ngIf="controlHasError('role') || fieldErrors['role']?.length">
+            {{ getFieldError('role') }}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Experience</label>
+          <select class="form-select" formControlName="experience">
+            <option value="" disabled>Select experience</option>
+            <option>0-1 years</option>
+            <option>1-3 years</option>
+            <option>3-5 years</option>
+            <option>5-8 years</option>
+            <option>8+ years</option>
+          </select>
+          <div class="field-error" *ngIf="controlHasError('experience') || fieldErrors['experience']?.length">
+            {{ getFieldError('experience') }}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Work preference</label>
+          <select class="form-select" formControlName="work_type">
+            <option value="" disabled>Select preference</option>
+            <option>Onsite</option>
+            <option>Hybrid</option>
+            <option>Remote</option>
+          </select>
+          <div class="field-error" *ngIf="controlHasError('work_type') || fieldErrors['work_type']?.length">
+            {{ getFieldError('work_type') }}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Notice period</label>
+          <select class="form-select" formControlName="notice_period">
+            <option value="" disabled>Select notice period</option>
+            <option>Immediate</option>
+            <option>15 days</option>
+            <option>30 days</option>
+            <option>45 days</option>
+            <option>60+ days</option>
+          </select>
+          <div class="field-error" *ngIf="controlHasError('notice_period') || fieldErrors['notice_period']?.length">
+            {{ getFieldError('notice_period') }}
+          </div>
+        </div>
+        <div class="col-12">
+          <label class="form-label">Portfolio / LinkedIn / GitHub</label>
+          <input type="url" class="form-control" formControlName="portfolio_url" placeholder="https://linkedin.com/in/yourname">
+          <div class="field-error" *ngIf="controlHasError('portfolio_url') || fieldErrors['portfolio_url']?.length">
+            {{ getFieldError('portfolio_url') }}
+          </div>
+        </div>
+        <div class="col-12">
+          <label class="form-label">Tell us about yourself</label>
+          <textarea class="form-control" formControlName="about" rows="4" placeholder="Share your experience, projects, and goals."></textarea>
+          <div class="field-error" *ngIf="controlHasError('about') || fieldErrors['about']?.length">
+            {{ getFieldError('about') }}
+          </div>
+        </div>
+        <div class="col-12">
+          <label class="form-label">Resume (PDF)</label>
+          <input class="form-control" type="file" (change)="onFileChange($event)">
+          <div class="field-error" *ngIf="fieldErrors['resume']?.length">
+            {{ getFieldError('resume') }}
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" formControlName="agreed">
+            <label class="form-check-label text-white-70">I confirm the information provided is accurate.</label>
+          </div>
+          <div class="field-error" *ngIf="controlHasError('agreed') || fieldErrors['agreed']?.length">
+            {{ getFieldError('agreed') }}
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-accent px-4">Submit application</button>
+          <span class="form-status ms-3" [class.form-status-error]="statusType === 'error'" [class.form-status-success]="statusType === 'success'">
+            {{ statusMessage }}
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

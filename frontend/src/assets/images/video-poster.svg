@@ -1,0 +1,17 @@
+<svg width="1400" height="800" viewBox="0 0 1400 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="800" fill="#0B0B0C"/>
+  <rect x="80" y="80" width="1240" height="640" rx="60" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="2"/>
+  <rect x="160" y="180" width="420" height="240" rx="26" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="2"/>
+  <rect x="660" y="180" width="520" height="140" rx="24" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2"/>
+  <rect x="660" y="360" width="520" height="220" rx="26" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="2"/>
+  <circle cx="360" cy="300" r="90" stroke="#64FFDA" stroke-width="3" stroke-opacity="0.9"/>
+  <circle cx="360" cy="300" r="48" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="2"/>
+  <path d="M720 430H1040" stroke="#64FFDA" stroke-width="3" stroke-linecap="round"/>
+  <path d="M720 470H1100" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round"/>
+  <path d="M720 510H980" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="2" stroke-linecap="round"/>
+  <path d="M200 500H560" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="2" stroke-linecap="round"/>
+  <path d="M200 540H480" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="2" stroke-linecap="round"/>
+  <path d="M200 580H520" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="1120" cy="260" r="40" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="1120" cy="260" r="14" fill="#64FFDA"/>
+</svg>

@@ -1,0 +1,106 @@
+
+  <div *ngIf="loading" class="loading-state">Loading...</div>
+  <div *ngIf="!loading && content" [innerHTML]="content"></div>
+<section class="contact-sections">
+  <div class="card-container">
+    <div class="contact-card">
+
+      <!-- CARD HEADER -->
+      <div class="card-header">
+        <span class="header-badge">GET IN TOUCH</span>
+        <h2 class="card-title">Book your appointment</h2>
+        <p class="card-subtitle">Select a date and time to schedule your consultation.</p>
+      </div>
+
+      <div class="card-divider"></div>
+
+      <!-- FORM -->
+      <form class="contact-form" (ngSubmit)="submit()" [formGroup]="form">
+        <div class="form-grid">
+
+          <div class="field-group">
+            <label class="field-label">Full name</label>
+            <input type="text" class="field-input" formControlName="full_name" placeholder="Your name">
+            <div class="field-error" *ngIf="controlHasError('full_name') || fieldErrors['full_name']?.length">
+              {{ getFieldError('full_name') }}
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label">Email</label>
+            <input type="email" class="field-input" formControlName="email" placeholder="you@email.com">
+            <div class="field-error" *ngIf="controlHasError('email') || fieldErrors['email']?.length">
+              {{ getFieldError('email') }}
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label">Phone</label>
+            <input type="tel" class="field-input" formControlName="phone" placeholder="+91 90257 70238">
+            <div class="field-error" *ngIf="controlHasError('phone') || fieldErrors['phone']?.length">
+              {{ getFieldError('phone') }}
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label">Company</label>
+            <input type="text" class="field-input" formControlName="company" placeholder="Company name">
+            <div class="field-error" *ngIf="controlHasError('company') || fieldErrors['company']?.length">
+              {{ getFieldError('company') }}
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label">Service interest</label>
+            <select class="field-input field-select" formControlName="service_interest">
+              <option value="" disabled>Select a service</option>
+              <option>Software Development</option>
+              <option>HRMS</option>
+              <option>HMS</option>
+              <option>Web Development</option>
+              <option>Support &amp; Maintenance</option>
+            </select>
+            <div class="field-error" *ngIf="controlHasError('service_interest') || fieldErrors['service_interest']?.length">
+              {{ getFieldError('service_interest') }}
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label">Appointment Date &amp; Time</label>
+            <input type="datetime-local" class="field-input" formControlName="budget_range">
+            <div class="field-error" *ngIf="controlHasError('budget_range') || fieldErrors['budget_range']?.length">
+              {{ getFieldError('budget_range') }}
+            </div>
+          </div>
+
+          <div class="field-group field-full">
+            <label class="field-label">Project details</label>
+            <textarea class="field-input field-textarea" formControlName="message" rows="4" placeholder="Tell us about your goals"></textarea>
+            <div class="field-error" *ngIf="controlHasError('message') || fieldErrors['message']?.length">
+              {{ getFieldError('message') }}
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CARD FOOTER -->
+        <div class="card-footer">
+          <p class="reply-note">
+            <i class="ti ti-clock"></i> We reply within 1 business day
+          </p>
+          <div class="footer-right">
+            <span class="form-status"
+              [class.form-status--error]="statusType === 'error'"
+              [class.form-status--success]="statusType === 'success'">
+              {{ statusMessage }}
+            </span>
+            <button type="submit" class="btn-submit">
+              Send request <i class="ti ti-send"></i>
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
