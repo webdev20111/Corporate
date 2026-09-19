@@ -30,10 +30,10 @@ class CareerApplicationRequest extends FormRequest
             'experience' => ['nullable', 'string', 'max:50'],
             'work_type' => ['nullable', 'string', 'max:50'],
             'notice_period' => ['nullable', 'string', 'max:50'],
-            'portfolio_url' => ['nullable', 'url', 'max:255'],
+            'portfolio_url' => ['nullable', 'string', 'max:255'],//url
             'about' => ['nullable', 'string', 'max:2000'],
             'resume' => ['nullable', 'file', 'max:5120'],
-            'agreed' => ['required', 'boolean'],
+            'agreed' => ['nullable', 'boolean'],//reqired
         ];
     }
 }

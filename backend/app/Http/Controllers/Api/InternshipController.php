@@ -26,7 +26,7 @@ class InternshipController extends Controller
 
         // Send Emails
         Mail::to($data['email'])->send(new UserThankYouMail($data));
-        Mail::to(config('mail.admin_address', 'admin@example.com'))->send(new AdminNotificationMail($data, 'Internship Application'));
+        Mail::to(config('mail.admin_address', 'snehar040624@gmail.com'))->send(new AdminNotificationMail($data, 'Internship Application'));
 
         return response()->json([
             'message' => 'Internship application received.',

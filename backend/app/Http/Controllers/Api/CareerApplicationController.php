@@ -7,6 +7,7 @@ use App\Http\Requests\CareerApplicationRequest;
 use App\Models\CareerApplication;
 use Illuminate\Http\JsonResponse;
 
+
 class CareerApplicationController extends Controller
 {
     public function store(CareerApplicationRequest $request): JsonResponse

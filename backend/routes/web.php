@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ContactAdminController;
 use App\Http\Controllers\Admin\PageAdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\InternshipController;//intern
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,6 +39,12 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::get('contacts', [ContactAdminController::class, 'index'])->name('contacts.index');
     Route::get('contacts/{contactInquiry}', [ContactAdminController::class, 'show'])->name('contacts.show');
     Route::patch('contacts/{contactInquiry}', [ContactAdminController::class, 'update'])->name('contacts.update');
+    //intern
+    Route::get('internships', [InternshipController::class, 'index'])
+    ->name('internships.index');
+
+     Route::get('internships/{internship}', [InternshipController::class, 'show'])
+    ->name('internships.show');
 });
 
 require __DIR__.'/auth.php';

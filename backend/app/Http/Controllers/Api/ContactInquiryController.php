@@ -12,8 +12,9 @@ class ContactInquiryController extends Controller
     public function store(ContactInquiryRequest $request): JsonResponse
     {
         $data = $request->validated();
+        
         $data['submitted_at'] = now();
-
+        
         $inquiry = ContactInquiry::create($data);
 
         // Send Email
