@@ -15,6 +15,8 @@
           <a class="block text-slate-200 hover:text-white" href="{{ route('admin.pages.index') }}">Pages</a>
           <a class="block text-slate-200 hover:text-white" href="{{ route('admin.careers.index') }}">Careers</a>
           <a class="block text-slate-200 hover:text-white" href="{{ route('admin.contacts.index') }}">Contacts</a>
+          <!-- NEW -->
+          <a class="block text-slate-200 hover:text-white"href="{{ route('admin.internships.index') }}">Internships</a>
         </nav>
       </aside>
       <main class="flex-1 p-8">
