@@ -1,0 +1,218 @@
+
+<!-- Floating Button -->
+
+<div class="chat-launcher" (click)="toggleChat()">
+
+  <div class="launcher-icon">
+    💬
+  </div>
+
+  <span class="notification-dot"></span>
+
+</div>
+
+<!-- Chat Window -->
+
+<div class="chat-container" *ngIf="isOpen">
+
+  <!-- Header -->
+
+  <div class="chat-header">
+
+    <div class="header-left">
+
+      <div class="bot-avatar">
+        🤖
+      </div>
+
+      <div class="header-info">
+
+        <h3>MPS AI Assistant</h3>
+
+        <div class="status">
+
+          <span class="online-dot"></span>
+
+          <span class="online-text">
+            Online
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <button
+      class="close-btn"
+      (click)="toggleChat()">
+
+      ✕
+
+    </button>
+
+  </div>
+
+  <!-- Chat Body -->
+
+  <div
+  class="chat-body"
+  #chatBody>
+
+    <div
+      *ngFor="let msg of messages"
+      class="message-wrapper"
+      [ngClass]="msg.sender">
+
+      <div
+        class="avatar"
+        *ngIf="msg.sender=='bot'">
+
+        🤖
+
+      </div>
+
+      <div class="message-content">
+
+        <div
+          class="bubble"
+          [ngClass]="msg.sender">
+
+          {{msg.text}}
+
+        </div>
+
+      </div>
+
+    </div>
+        <!-- ================= QUICK OPTIONS ================= -->
+
+    <div
+      class="quick-options"
+      *ngIf="currentStep==0">
+
+      <!-- Career -->
+
+      <button
+        class="option-card"
+        (click)="userMessage='Career';sendMessage()">
+
+        <div class="option-icon">
+          💼
+        </div>
+
+        <div class="option-text">
+
+          <h4>Career</h4>
+
+          <p>
+            Apply for current openings
+          </p>
+
+        </div>
+
+      </button>
+
+      <!-- Internship -->
+
+      <button
+        class="option-card"
+        (click)="userMessage='Internship';sendMessage()">
+
+        <div class="option-icon">
+          🎓
+        </div>
+
+        <div class="option-text">
+
+          <h4>Internship</h4>
+
+          <p>
+            Student Internship Program
+          </p>
+
+        </div>
+
+      </button>
+
+      <!-- Freelance -->
+
+      <button
+        class="option-card"
+        (click)="userMessage='Freelance Project';sendMessage()">
+
+        <div class="option-icon">
+          🚀
+        </div>
+
+        <div class="option-text">
+
+          <h4>Freelance Project</h4>
+
+          <p>
+            Build your software project
+          </p>
+
+        </div>
+
+      </button>
+
+      <!-- Contact -->
+
+      <button
+        class="option-card"
+        (click)="userMessage='Contact';sendMessage()">
+
+        <div class="option-icon">
+          📞
+        </div>
+
+        <div class="option-text">
+
+          <h4>Contact</h4>
+
+          <p>
+            Talk with our team
+          </p>
+
+        </div>
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+
+  <div class="chat-footer">
+
+    <div class="input-wrapper">
+
+      <input
+
+        type="text"
+
+        [(ngModel)]="userMessage"
+
+        (keyup.enter)="sendMessage()"
+
+        placeholder="Type your message..."
+
+        autocomplete="off">
+
+      <button
+
+        class="send-btn"
+
+        (click)="sendMessage()">
+
+        ➜
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
