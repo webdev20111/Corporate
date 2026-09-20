@@ -21,3 +21,4 @@ import { InternshipComponent } from './internship/internship.component';
   ]
 })
 export class PagesModule {}
+
